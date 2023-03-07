@@ -45,7 +45,8 @@ root: ~/.config
 # attach: false
 
 windows:
-  - neovim: cd nvim && gst
+  - neovim: cd nvim
+  - kitty: cd kitty
   - amethyst: cd amethyst
   - hammerspoon: cd hammerspoon
   - tmux: cd tmux
