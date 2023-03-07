@@ -1,0 +1,5 @@
+require "bjornevik.telescope"
+-- require "bjornevik.lsp"
+require "bjornevik.mason"
+require "bjornevik.cmp"
+require "bjornevik.treesitter"

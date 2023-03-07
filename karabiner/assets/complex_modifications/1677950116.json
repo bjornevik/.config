@@ -1,0 +1,1 @@
+{"title":"Maps Right Command to Screenshot","rules":[{"description":"Right Command to Meh","manipulators":[{"from":{"key_code":"right_command"},"to":[{"key_code":"left_control","modifiers":["left_shift","left_alt"],"lazy":false}],"type":"basic"}]}]}

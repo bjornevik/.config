@@ -1,0 +1,117 @@
+# set up layouts
+layouts:
+  - tall
+  - middle-wide
+  - widescreen-tall
+  - fullscreen
+  - floating
+
+floating-is-blacklist: true
+
+floating:
+  - "com.apple.systempreferences"
+  - "com.apple.iphonesimulator"
+  - "com.bitwarden.desktop"
+  - "com.insomnia.app"
+  - "com.apple.finder"
+  - "com.apple.AppStore"
+  - "com.apple.ActivityMonitor"
+  - "com.facebook.sonar"
+
+window-margins: true
+window-margin-size: 5
+enables-layout-hud-on-space-change: false
+
+# mod1: hyper
+mod1:
+  - option
+  - shift
+  - control
+  - command
+
+# mod2: meh
+mod2:
+  - option
+  - shift
+  - control
+
+relaunch-amethyst:
+  mod: mod2
+  key: z
+
+cycle-layout:
+  mod: mod2
+  key: r
+
+toggle-float:
+  mod: mod2
+  key: t
+
+swap-ccw:
+  mod: mod2
+  key: j
+
+swap-cw:
+  mod: mod2
+  key: k
+
+focus-ccw:
+  mod: mod1
+  key: j
+
+focus-cw:
+  mod: mod1
+  key: k
+
+shrink-main:
+  mod: mod2
+  key: h
+
+expand-main:
+  mod: mod2
+  key: l
+
+throw-space-left:
+  mod: mod2
+  key: "left"
+
+throw-space-right:
+  mod: mod2
+  key: "right"
+
+throw-space-1:
+  mod: mod2
+  key: 1
+
+throw-space-2:
+  mod: mod2
+  key: 2
+
+throw-space-3:
+  mod: mod2
+  key: 3
+
+throw-space-4:
+  mod: mod2
+  key: 4
+
+throw-space-5:
+  mod: mod2
+  key: 5
+
+throw-space-6:
+  mod: mod2
+  key: 6
+
+throw-space-7:
+  mod: mod2
+  key: 7
+
+throw-space-8:
+  mod: mod2
+  key: 8
+
+throw-space-9:
+  mod: mod2
+  key: 9
+
