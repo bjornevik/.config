@@ -16,6 +16,7 @@ floating:
   - "com.apple.AppStore"
   - "com.apple.ActivityMonitor"
   - "com.facebook.sonar"
+  - "com.microsoft.VSCode"
 
 window-margins: true
 window-margin-size: 5
