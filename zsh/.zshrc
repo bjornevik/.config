@@ -23,11 +23,14 @@ prompt_end() {
 
 # export N_PREFIX=~/.n
 source ~/.secretrc
-export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/.rgrc"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export EDITOR="nvim"
+export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/.rgrc"
+export PATH="/opt/homebrew/bin:$PATH"
+export GOPATH="$HOME/go"
+export PATH="$PATH:$GOPATH/bin"
 
 alias nv="nvim"
 alias mux="tmuxinator"
