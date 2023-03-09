@@ -49,6 +49,7 @@ require("nvim-treesitter.configs").setup {
     "comment",
     "dart",
     "dockerfile",
+    "gitcommit",
     "go",
     "gomod",
     "gowork",
