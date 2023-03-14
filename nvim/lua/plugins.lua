@@ -112,6 +112,12 @@ return {
       "Ckolkey/ts-node-action",
       "JoosepAlviste/nvim-ts-context-commentstring",
       {
+        "Wansmer/treesj",
+        config = function()
+          require("treesj").setup { use_default_keymaps = false }
+        end,
+      },
+      {
         "danymat/neogen",
         config = function()
           require("neogen").setup {}

@@ -111,3 +111,4 @@ require("ts-node-action").setup {
 }
 
 vim.keymap.set("n", "<Tab>", require("ts-node-action").node_action, { desc = "Trigger Node Action" })
+vim.keymap.set("n", "<Leader><Tab>", require("treesj").toggle, { desc = "Trigger Tree splitjoin action" })
