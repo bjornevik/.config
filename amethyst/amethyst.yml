@@ -17,6 +17,7 @@ floating:
   - "com.apple.ActivityMonitor"
   - "com.facebook.sonar"
   - "com.microsoft.VSCode"
+  - "pl.maketheweb.cleanshotx"
 
 window-margins: true
 window-margin-size: 5
@@ -114,4 +115,3 @@ throw-space-8:
 throw-space-9:
   mod: mod2
   key: 9
-
