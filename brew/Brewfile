@@ -13,6 +13,7 @@ brew "fzf"
 brew "git"
 brew "gnupg"
 brew "gopass"
+brew "jq"
 brew "lazygit"
 brew "n"
 brew "neovim", args: ["HEAD"]
