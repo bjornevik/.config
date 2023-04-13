@@ -25,4 +25,5 @@ hs.hotkey.bind(hyper, "f", open_app("Figma")) -- (f)igma
 hs.hotkey.bind(hyper, "p", open_app("Proxyman")) -- (p)roxyman
 
 hs.hotkey.bind(hyper, "q", open_app("Simulator")) -- q cause unused
-hs.hotkey.bind(hyper, "a", open_app("Flipper")) -- a cause under q and unused
+-- hs.hotkey.bind(hyper, "a", open_app("Flipper")) -- a cause under q and unused
+hs.hotkey.bind(hyper, "a", open_app("React Native Debugger")) -- a cause under q and unused
