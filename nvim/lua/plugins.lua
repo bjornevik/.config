@@ -108,7 +108,7 @@ return {
     dependencies = {
       "nvim-treesitter/playground",
       "nvim-treesitter/nvim-treesitter-textobjects",
-      "bjornevik/nvim-ts-autotag",
+      "windwp/nvim-ts-autotag",
       "Ckolkey/ts-node-action",
       "JoosepAlviste/nvim-ts-context-commentstring",
       {
