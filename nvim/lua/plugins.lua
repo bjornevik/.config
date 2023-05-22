@@ -36,8 +36,6 @@ return {
       require("nvim-surround").setup {}
     end,
   },
-  { "mrjones2014/smart-splits.nvim" },
-  { "ThePrimeagen/refactoring.nvim" },
   { "numToStr/Comment.nvim" },
   {
     "sbdchd/neoformat",
@@ -78,7 +76,7 @@ return {
 
   -- lsp
   { "neovim/nvim-lspconfig" },
-  { "mrshmllow/document-color.nvim" },
+  { "mrshmllow/document-color.nvim" }, -- Tailwind
   { "ray-x/lsp_signature.nvim" },
   { "nvim-tree/nvim-web-devicons" },
   { "folke/trouble.nvim" },
@@ -86,9 +84,6 @@ return {
   -- language specific plugins
   { "simrat39/rust-tools.nvim" },
   { "folke/neodev.nvim" },
-  { "Neevash/awesome-flutter-snippets" },
-  { "dart-lang/dart-vim-plugin" },
-  { "akinsho/flutter-tools.nvim" },
 
   -- Autocomplete
   { "hrsh7th/cmp-nvim-lsp" },

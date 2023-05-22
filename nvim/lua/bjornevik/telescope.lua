@@ -91,10 +91,7 @@ telescope.setup {
 }
 
 telescope.load_extension "fzy_native"
-telescope.load_extension "flutter"
 telescope.load_extension "file_browser"
-require("refactoring").setup {}
-telescope.load_extension "refactoring"
 telescope.load_extension "undo"
 telescope.load_extension "neoclip"
 
@@ -122,15 +119,5 @@ vim.keymap.set("n", "<leader>ds", telescope_builtin.lsp_document_symbols, { nore
 vim.keymap.set("n", "<leader>fb", telescope.extensions.file_browser.file_browser, { noremap = true })
 vim.keymap.set("n", "<leader>tu", telescope.extensions.undo.undo, { noremap = true })
 vim.keymap.set("n", "<leader>vrc", M.search_dotfiles, { noremap = true })
-
--- Plugin specific remaps
-vim.keymap.set(
-  "v",
-  "<leader>rr",
-  "<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<CR>",
-  { noremap = true }
-)
-
-vim.keymap.set("n", "<leader>fl", telescope.extensions.flutter.commands, { noremap = true })
 
 return M

@@ -6,11 +6,6 @@ end
 bufferline.setup {
   options = {
     diagnostics = "nvim_lsp",
-    custom_filter = function(buf_number)
-      if vim.fn.bufname(buf_number) ~= "__FLUTTER_DEV_LOG__" then
-        return true
-      end
-    end,
     separator_style = "slant",
   },
 }
