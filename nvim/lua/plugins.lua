@@ -76,7 +76,6 @@ return {
 
   -- lsp
   { "neovim/nvim-lspconfig" },
-  { "mrshmllow/document-color.nvim" }, -- Tailwind
   { "ray-x/lsp_signature.nvim" },
   { "nvim-tree/nvim-web-devicons" },
   { "folke/trouble.nvim" },
