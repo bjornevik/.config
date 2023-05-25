@@ -12,7 +12,7 @@ end
 local hyper = { "cmd", "alt", "ctrl", "shift" }
 
 -- bitwarden use raycast instead
--- hs.hotkey.bind(hyper, "b", open_app("Bitwarden")) -- (b)itwarden
+hs.hotkey.bind(hyper, "b", open_app("Bitwarden")) -- (b)itwarden
 hs.hotkey.bind(hyper, "s", open_app("Slack")) -- (s)lack
 hs.hotkey.bind(hyper, "e", open_app("Microsoft Outlook")) -- (e)mail
 hs.hotkey.bind(hyper, "w", open_app("Firefox")) -- (w)eb
