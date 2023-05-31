@@ -46,6 +46,10 @@ cycle-layout:
   mod: mod2
   key: r
 
+select-fullscreen-layout:
+  mod: mod2
+  key: f
+
 toggle-float:
   mod: mod2
   key: t
