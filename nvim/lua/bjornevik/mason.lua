@@ -1,15 +1,15 @@
 require("mason").setup()
 require("mason-lspconfig").setup {
   ensure_installed = {
-    "tsserver",
+    "astro",
     "eslint",
     "gopls",
-    "vuels",
-    "astro",
-    "tailwindcss",
-    "rust_analyzer",
     "lua_ls",
     "ocamllsp",
+    "rust_analyzer",
+    "tailwindcss",
+    "tsserver",
+    "vuels",
   },
 }
 
