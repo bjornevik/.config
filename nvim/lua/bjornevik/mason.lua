@@ -9,6 +9,7 @@ require("mason-lspconfig").setup {
     "tailwindcss",
     "rust_analyzer",
     "lua_ls",
+    "ocamllsp",
   },
 }
 

@@ -69,6 +69,7 @@ lspconfig.vimls.setup { on_attach = on_attach, capabilities = capabilities }
 lspconfig.vuels.setup { on_attach = on_attach, capabilities = capabilities }
 lspconfig.astro.setup {}
 lspconfig.tailwindcss.setup { on_attach = on_attach, capabilities = capabilities }
+lspconfig.ocamllsp.setup { on_attach = on_attach, capabilities = capabilities }
 
 require("rust-tools").setup {
   server = {

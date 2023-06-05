@@ -19,6 +19,7 @@ brew "jq"
 brew "lazygit"
 brew "n"
 brew "neovim", args: ["HEAD"]
+brew "opam"
 brew "p7zip"
 brew "ripgrep"
 brew "stylua"

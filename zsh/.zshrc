@@ -43,3 +43,6 @@ if [ -f '/Users/johnbjornevik/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/j
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/johnbjornevik/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/johnbjornevik/google-cloud-sdk/completion.zsh.inc'; fi
+
+# opam configuration
+[[ ! -r /Users/johnbjornevik/.opam/opam-init/init.zsh ]] || source /Users/johnbjornevik/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
