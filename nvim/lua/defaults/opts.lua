@@ -52,7 +52,7 @@ vim.opt.signcolumn = "yes"
 vim.o.foldcolumn = "1"
 vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99
-vim.o.foldenable = "1"
+vim.o.foldenable = true
 vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 vim.o.statuscolumn = "%s%=%{&nu?(&rnu&&v:relnum?v:relnum:v:lnum):''} %#FoldColumn#%{"
   .. "foldlevel(v:lnum) > foldlevel(v:lnum - 1)"
