@@ -66,6 +66,13 @@ return {
       end, { desc = "Structural Replace" })
     end,
   },
+  {
+    "iamcco/markdown-preview.nvim",
+    ft = "markdown",
+    build = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+  },
 
   -- Adds textobject for camelCase, kebab-case etc, civ, div
   { "Julian/vim-textobj-variable-segment", dependencies = "kana/vim-textobj-user" },
