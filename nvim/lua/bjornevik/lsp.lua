@@ -25,10 +25,6 @@ local on_attach = function(client)
   vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = 0 })
   vim.keymap.set("i", "<C-s>", vim.lsp.buf.signature_help, { buffer = 0 })
 
-  if client.server_capabilities.colorProvider then
-    require("document-color").buf_attach(bufnr)
-  end
-
   if client.server_capabilities.codeLensProvider then
     vim.api.nvim_create_augroup("lsp_document_codelens", {})
     vim.api.nvim_create_autocmd("BufEnter", {
