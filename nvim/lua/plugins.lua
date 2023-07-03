@@ -23,7 +23,7 @@ return {
   { "nvim-lua/plenary.nvim" },
 
   -- Git
-  { "TimUntersberger/neogit" },
+  { "NeogitOrg/neogit" },
   { "sindrets/diffview.nvim" },
   { "lewis6991/gitsigns.nvim" },
 
