@@ -154,7 +154,6 @@ return {
   { "stevearc/dressing.nvim" },
   { "norcalli/nvim-colorizer.lua" },
   { "nvim-lualine/lualine.nvim" },
-  { "mrjones2014/nvim-ts-rainbow" },
   { "akinsho/bufferline.nvim" },
 
   -- DAP

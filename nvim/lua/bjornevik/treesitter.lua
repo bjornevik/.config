@@ -75,11 +75,6 @@ require("nvim-treesitter.configs").setup {
     "vue",
     "yaml",
   },
-  rainbow = {
-    enable = true,
-    extended_mode = true,
-    max_file_lines = nil,
-  },
   playground = {
     enable = true,
     updatetime = 25,
@@ -94,10 +89,6 @@ require("nvim-treesitter.configs").setup {
 require("Comment").setup {
   pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
 }
-
-local ft_to_parser = require("nvim-treesitter.parsers").filetype_to_parsername
-ft_to_parser.js = "typescript"
-ft_to_parser.jsx = "tsx"
 
 require("neogen").setup {
   enabled = true,
