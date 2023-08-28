@@ -5,6 +5,7 @@ require("mason-lspconfig").setup {
     "eslint",
     "gopls",
     "lua_ls",
+    "marksman",
     "ocamllsp",
     "rust_analyzer",
     "tailwindcss",

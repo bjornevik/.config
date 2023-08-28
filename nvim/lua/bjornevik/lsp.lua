@@ -61,6 +61,7 @@ require("lsp_signature").setup {
 }
 
 lspconfig.gopls.setup { on_attach = on_attach, capabilities = capabilities }
+lspconfig.marksman.setup { on_attach = on_attach, capabilities = capabilities }
 lspconfig.vimls.setup { on_attach = on_attach, capabilities = capabilities }
 lspconfig.vuels.setup { on_attach = on_attach, capabilities = capabilities }
 lspconfig.astro.setup { on_attach = on_attach, capabilities = capabilities }
