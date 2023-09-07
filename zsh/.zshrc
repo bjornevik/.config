@@ -35,6 +35,7 @@ export PATH="$PATH:$GOPATH/bin"
 alias nv="nvim"
 alias mux="tmuxinator"
 alias lg="lazygit"
+alias ll="lsd -l -a"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

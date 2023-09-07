@@ -28,6 +28,7 @@ brew "golangci-lint"
 brew "gopass"
 brew "jq"
 brew "lazygit"
+brew "lsd"
 brew "n"
 brew "neovim", args: ["HEAD"]
 brew "opam"
