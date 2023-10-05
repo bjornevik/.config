@@ -150,7 +150,7 @@ return {
   },
   { "goolord/alpha-nvim" },
 
-  { "lukas-reineke/indent-blankline.nvim" },
+  -- { "lukas-reineke/indent-blankline.nvim" },
   { "stevearc/dressing.nvim" },
   { "norcalli/nvim-colorizer.lua" },
   { "nvim-lualine/lualine.nvim" },
