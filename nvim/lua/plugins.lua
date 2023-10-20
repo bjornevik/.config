@@ -83,7 +83,6 @@ return {
 
   -- lsp
   { "neovim/nvim-lspconfig" },
-  { "ray-x/lsp_signature.nvim" },
   { "nvim-tree/nvim-web-devicons" },
   { "folke/trouble.nvim" },
 
@@ -150,7 +149,6 @@ return {
   },
   { "goolord/alpha-nvim" },
 
-  -- { "lukas-reineke/indent-blankline.nvim" },
   { "stevearc/dressing.nvim" },
   { "norcalli/nvim-colorizer.lua" },
   { "nvim-lualine/lualine.nvim" },
