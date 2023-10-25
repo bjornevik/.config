@@ -150,7 +150,7 @@ return {
   { "goolord/alpha-nvim" },
 
   { "stevearc/dressing.nvim" },
-  { "norcalli/nvim-colorizer.lua" },
+  { "brenoprata10/nvim-highlight-colors" },
   { "nvim-lualine/lualine.nvim" },
   { "akinsho/bufferline.nvim" },
 
