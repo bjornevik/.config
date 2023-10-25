@@ -150,7 +150,12 @@ return {
   { "goolord/alpha-nvim" },
 
   { "stevearc/dressing.nvim" },
-  { "brenoprata10/nvim-highlight-colors" },
+  {
+    "brenoprata10/nvim-highlight-colors",
+    config = function()
+      require("nvim-highlight-colors").setup { enable_tailwind = true }
+    end,
+  },
   { "nvim-lualine/lualine.nvim" },
   { "akinsho/bufferline.nvim" },
 
