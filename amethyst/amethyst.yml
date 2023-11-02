@@ -19,6 +19,7 @@ floating:
   - "com.microsoft.VSCode"
   - "pl.maketheweb.cleanshotx"
   - "com.electron.firefoo"
+  - "com.usebruno.app"
 
 window-margins: true
 window-margin-size: 5
