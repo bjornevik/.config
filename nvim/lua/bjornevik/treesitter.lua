@@ -80,10 +80,10 @@ require("nvim-treesitter.configs").setup {
     updatetime = 25,
     persist_queries = true,
   },
-  context_commentstring = {
-    enable = true,
-    enable_autocmd = false,
-  },
+  -- context_commentstring = {
+  --   enable = true,
+  --   enable_autocmd = false,
+  -- },
 }
 
 require("Comment").setup {

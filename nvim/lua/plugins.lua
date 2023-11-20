@@ -110,7 +110,15 @@ return {
       "nvim-treesitter/nvim-treesitter-textobjects",
       "windwp/nvim-ts-autotag",
       "Ckolkey/ts-node-action",
-      "JoosepAlviste/nvim-ts-context-commentstring",
+      {
+        "JoosepAlviste/nvim-ts-context-commentstring",
+        config = function()
+          vim.g.skip_ts_context_commentstring_module = true
+          require("ts_context_commentstring").setup {
+            enable_autocmd = false,
+          }
+        end,
+      },
       {
         "Wansmer/treesj",
         config = function()
