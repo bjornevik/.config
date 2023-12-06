@@ -73,6 +73,16 @@ return {
       vim.fn["mkdp#util#install"]()
     end,
   },
+  {
+    "github/copilot.vim",
+    init = function()
+      vim.keymap.set("i", "<leader><CR>", 'copilot#Accept("<CR>")', {
+        expr = true,
+        replace_keycodes = false,
+      })
+      vim.g.copilot_no_tab_map = true
+    end,
+  },
 
   -- Adds textobject for camelCase, kebab-case etc, civ, div
   { "Julian/vim-textobj-variable-segment", dependencies = "kana/vim-textobj-user" },
