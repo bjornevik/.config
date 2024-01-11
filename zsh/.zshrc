@@ -41,6 +41,8 @@ export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/.rgrc"
 export PATH="/opt/homebrew/bin:$PATH"
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
+export FLUTTER_SDK="$HOME/flutter/bin"
+export PATH="$PATH:$FLUTTER_SDK"
 
 alias nv="nvim"
 alias mux="tmuxinator"

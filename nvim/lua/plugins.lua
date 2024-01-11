@@ -99,6 +99,18 @@ return {
   -- language specific plugins
   { "simrat39/rust-tools.nvim" },
   { "folke/neodev.nvim" },
+  {
+    "akinsho/flutter-tools.nvim",
+    lazy = false,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+    },
+    config = true,
+    init = function()
+      vim.keymap.set("n", "<leader>ft", ":FlutterOutlineToggle<CR>", { noremap = true, silent = true })
+    end,
+  },
 
   -- Autocomplete
   { "hrsh7th/cmp-nvim-lsp" },
