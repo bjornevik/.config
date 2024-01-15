@@ -106,8 +106,14 @@ return {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope.nvim",
     },
-    config = true,
     init = function()
+      local bjorneviklsp = require "bjornevik.lsp"
+      require("flutter-tools").setup {
+        lsp = {
+          on_attach = bjorneviklsp.on_attach,
+          capabilities = bjorneviklsp.capabilities,
+        },
+      }
       vim.keymap.set("n", "<leader>ft", ":FlutterOutlineToggle<CR>", { noremap = true, silent = true })
     end,
   },

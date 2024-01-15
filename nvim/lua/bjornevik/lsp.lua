@@ -167,3 +167,9 @@ end, { noremap = true })
 vim.keymap.set("n", "<C-k>", function()
   require("trouble").previous { skip_groups = true, jump = true }
 end, { noremap = true })
+
+-- return on_attach and capabilities so they can be used in instantiating other LSPs in other files (i.e. flutter-tools)
+return {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
