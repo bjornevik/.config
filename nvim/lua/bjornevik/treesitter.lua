@@ -4,6 +4,10 @@ if not has_treesitter then
 end
 
 require("nvim-treesitter.configs").setup {
+  modules = {},
+  sync_install = false,
+  ignore_install = {},
+  auto_install = true,
   autotag = {
     enable = true,
   },
@@ -17,13 +21,8 @@ require("nvim-treesitter.configs").setup {
   incremental_selection = {
     enable = true,
     keymaps = {
-      -- init_selection = "gnn",
-      -- node_incremental = "grn",
-      -- scope_increamental = "grc",
-      -- node_decremental = "grm",
       init_selection = "<C-n>",
       node_incremental = "<C-n>",
-      scope_incremental = "<C-s>",
       node_decremental = "<C-p>",
     },
   },
