@@ -16,7 +16,7 @@
   "friendly-snippets": { "branch": "main", "commit": "69a2c1675b66e002799f5eef803b87a12f593049" },
   "gitsigns.nvim": { "branch": "main", "commit": "c5ff7628e19a47ec14d3657294cc074ecae27b99" },
   "gruvbox-baby": { "branch": "main", "commit": "436f73d6a45777eadedbd2f842f766d093266eb3" },
-  "harpoon": { "branch": "master", "commit": "ccae1b9bec717ae284906b0bf83d720e59d12b91" },
+  "harpoon": { "branch": "harpoon2", "commit": "2cd4e03372f7ee5692c8caa220f479ea07970f17" },
   "lazy.nvim": { "branch": "main", "commit": "28126922c9b54e35a192ac415788f202c3944c9f" },
   "leap-spooky.nvim": { "branch": "main", "commit": "45736ee4cd7584204ff5367ef47b4337bdb03aa9" },
   "leap.nvim": { "branch": "main", "commit": "9f7cf0a87ca2c3f47df37ef6787d34a65604d248" },
