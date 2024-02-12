@@ -20,6 +20,7 @@ floating:
   - "pl.maketheweb.cleanshotx"
   - "com.electron.firefoo"
   - "com.usebruno.app"
+  - "com.google.android.studio"
 
 window-margins: true
 window-margin-size: 5
