@@ -127,10 +127,10 @@ lspconfig.tsserver.setup {
 -- Diagnostics
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
   signs = {
-    severity_limit = "Error",
+    severity = { min = vim.diagnostic.severity.ERROR },
   },
   virtual_text = {
-    severity_limit = "Warning",
+    severity = { min = vim.diagnostic.severity.WARN },
     spacing = 2,
     prefix = "",
   },
