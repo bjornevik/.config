@@ -76,7 +76,7 @@ return {
   {
     "github/copilot.vim",
     init = function()
-      vim.keymap.set("i", "<C-p>", 'copilot#Accept("<CR>")', { -- <(C)o-(p)ilot>
+      vim.keymap.set("i", "<Right>", 'copilot#Accept("<CR>")', { -- <(C)o-(p)ilot>
         expr = true,
         replace_keycodes = false,
       })
