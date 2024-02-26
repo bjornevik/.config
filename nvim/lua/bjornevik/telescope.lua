@@ -35,6 +35,7 @@ telescope.setup {
       ".dart_tool/.*",
       "debug/.*",
       "target/.*",
+      "_build/.*",
     },
 
     file_previewer = telescope_previewers.vim_buffer_cat.new,
