@@ -51,6 +51,7 @@ alias nv="nvim"
 alias mux="tmuxinator"
 alias lg="lazygit"
 alias ll="lsd -l -a"
+alias fman="compgen -c | fzf | xargs man"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
