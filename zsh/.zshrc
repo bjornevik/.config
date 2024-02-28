@@ -52,6 +52,8 @@ alias mux="tmuxinator"
 alias lg="lazygit"
 alias ll="lsd -l -a"
 alias fman="compgen -c | fzf | xargs man"
+alias cps="gh copilot suggest"
+alias cpe="gh copilot explain"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
