@@ -37,14 +37,6 @@ vim.api.nvim_create_autocmd("CursorHold", {
   desc = "Show diagnostic on cursor hover.",
 })
 
--- Run Neoformat before save
-vim.api.nvim_create_autocmd("BufWritePre", {
-  group = "bjornevik",
-  pattern = "*",
-  command = "try | undojoin | Neoformat | catch /E790/ | Neoformat | endtry",
-  desc = "Run Neoformat before save",
-})
-
 -- Highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
   group = "bjornevik",

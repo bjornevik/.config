@@ -38,12 +38,6 @@ return {
   },
   { "numToStr/Comment.nvim" },
   {
-    "sbdchd/neoformat",
-    init = function()
-      vim.keymap.set("n", "<leader>nf", ":Neoformat<CR>", { noremap = true, silent = true })
-    end,
-  },
-  {
     "AckslD/nvim-neoclip.lua",
     init = function()
       vim.keymap.set("n", "<leader>nc", require("telescope").extensions.neoclip.neoclip, { noremap = true })
@@ -204,6 +198,6 @@ return {
     dependencies = "kevinhwang91/promise-async",
   },
 
-  -- DAP
   require "plugins.debug",
+  require "plugins.formatting",
 }
