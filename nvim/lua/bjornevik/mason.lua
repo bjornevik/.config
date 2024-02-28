@@ -15,4 +15,3 @@ require("mason-lspconfig").setup {
 }
 
 require "bjornevik.lsp"
-require "bjornevik.dap"

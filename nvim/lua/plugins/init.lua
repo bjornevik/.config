@@ -169,7 +169,6 @@ return {
       "nvim-telescope/telescope-fzy-native.nvim",
       "nvim-telescope/telescope-file-browser.nvim",
       "debugloop/telescope-undo.nvim",
-      "nvim-telescope/telescope-dap.nvim",
     },
   },
 
@@ -199,14 +198,12 @@ return {
   { "nvim-lualine/lualine.nvim" },
   { "akinsho/bufferline.nvim" },
 
-  -- DAP
-  { "rcarriga/nvim-dap-ui" },
-  { "theHamsta/nvim-dap-virtual-text" },
-  { "mfussenegger/nvim-dap" },
-
   -- FOLDS
   {
     "kevinhwang91/nvim-ufo",
     dependencies = "kevinhwang91/promise-async",
   },
+
+  -- DAP
+  require "plugins.debug",
 }
