@@ -3,46 +3,32 @@ if not has_cmp then
   return
 end
 
-local has_words_before = function()
-  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match "%s" == nil
-end
-
-local types = require "cmp.types"
-local neogen = require "neogen"
+local luasnip = require "luasnip"
+luasnip.config.setup {}
 
 cmp.setup {
-  preselect = types.cmp.PreselectMode.None,
   snippet = {
     expand = function(args)
-      require("luasnip").lsp_expand(args.body)
+      luasnip.lsp_expand(args.body)
     end,
   },
+  completion = { completeopt = "menu,menuone,noinsert" },
   mapping = {
-    ["<C-f>"] = cmp.mapping.scroll_docs(-4),
-    ["<C-d>"] = cmp.mapping.scroll_docs(4),
-    ["<C-Space>"] = cmp.mapping.complete(),
-    ["<C-e>"] = cmp.mapping.close(),
-    ["<CR>"] = cmp.mapping.confirm { select = false },
-    ["<Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif neogen.jumpable() then
-        neogen.jump_next()
-      elseif has_words_before() then
-        cmp.complete()
-      else
-        fallback()
+    ["<C-n"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
+    ["<C-p"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
+    ["<C-y>"] = cmp.mapping.confirm { select = true },
+    ["<C-Space>"] = cmp.mapping.complete {},
+    ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+    ["<C-f>"] = cmp.mapping.scroll_docs(4),
+    ["<C-e>"] = cmp.mapping.abort(),
+    ["<C-l>"] = cmp.mapping(function()
+      if luasnip.expand_or_locally_jumpable() then
+        luasnip.expand_or_jump()
       end
     end, { "i", "s" }),
-
-    ["<S-Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif neogen.jumpable(-1) then
-        neogen.jump_prev()
-      else
-        fallback()
+    ["<C-h>"] = cmp.mapping(function()
+      if luasnip.expand_or_locally_jumpable() then
+        luasnip.expand_or_jump()
       end
     end, { "i", "s" }),
   },
@@ -52,22 +38,6 @@ cmp.setup {
     { name = "nvim_lsp" },
     { name = "buffer" },
     { name = "path" },
-  },
-  formatting = {
-    format = function(entry, vim_item)
-      -- fancy icons and a name of kind
-      vim_item.kind = require("lspkind").presets.default[vim_item.kind] .. " " .. vim_item.kind
-
-      -- set a name for each source
-      vim_item.menu = ({
-        buffer = "[Buffer]",
-        nvim_lsp = "[LSP]",
-        luasnip = "[LuaSnip]",
-        path = "[Path]",
-        nvim_lua = "[Lua]",
-      })[entry.source.name]
-      return vim_item
-    end,
   },
 }
 
