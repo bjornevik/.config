@@ -3,34 +3,20 @@ if not has_cmp then
   return
 end
 
-local luasnip = require "luasnip"
-luasnip.config.setup {}
-
 cmp.setup {
   snippet = {
     expand = function(args)
-      luasnip.lsp_expand(args.body)
+      require("luasnip").lsp_expand(args.body)
     end,
   },
-  completion = { completeopt = "menu,menuone,noinsert" },
   mapping = {
-    ["<C-n"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
-    ["<C-p"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
+    ["<C-n>"] = cmp.mapping.select_next_item(),
+    ["<C-p>"] = cmp.mapping.select_prev_item(),
     ["<C-y>"] = cmp.mapping.confirm { select = true },
-    ["<C-Space>"] = cmp.mapping.complete {},
-    ["<C-b>"] = cmp.mapping.scroll_docs(-4),
     ["<C-f>"] = cmp.mapping.scroll_docs(4),
-    ["<C-e>"] = cmp.mapping.abort(),
-    ["<C-l>"] = cmp.mapping(function()
-      if luasnip.expand_or_locally_jumpable() then
-        luasnip.expand_or_jump()
-      end
-    end, { "i", "s" }),
-    ["<C-h>"] = cmp.mapping(function()
-      if luasnip.expand_or_locally_jumpable() then
-        luasnip.expand_or_jump()
-      end
-    end, { "i", "s" }),
+    ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+    ["<C-Space>"] = cmp.mapping.complete(),
+    ["<C-e>"] = cmp.mapping.close(),
   },
   sources = {
     { name = "nvim_lua" },
@@ -38,6 +24,22 @@ cmp.setup {
     { name = "nvim_lsp" },
     { name = "buffer" },
     { name = "path" },
+  },
+  formatting = {
+    format = function(entry, vim_item)
+      -- fancy icons and a name of kind
+      vim_item.kind = require("lspkind").presets.default[vim_item.kind] .. " " .. vim_item.kind
+
+      -- set a name for each source
+      vim_item.menu = ({
+        nvim_lsp = "[LSP]",
+        buffer = "[Buffer]",
+        luasnip = "[LuaSnip]",
+        path = "[Path]",
+        nvim_lua = "[Lua]",
+      })[entry.source.name]
+      return vim_item
+    end,
   },
 }
 
