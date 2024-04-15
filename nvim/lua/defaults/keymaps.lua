@@ -7,9 +7,8 @@ vim.keymap.set("n", "<leader>P", '"+P', { noremap = true })
 -- Keep it centered
 vim.keymap.set("n", "n", "nzzzv", { noremap = true })
 vim.keymap.set("n", "N", "Nzzzv", { noremap = true })
--- TODO: Uncommment when https://github.com/neovim/neovim/issues/28106 is fixed
--- vim.keymap.set("n", "<C-d>", "<C-d>zz", { noremap = true })
--- vim.keymap.set("n", "<C-u>", "<C-u>zz", { noremap = true })
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { noremap = true })
+vim.keymap.set("n", "<C-u>", "<C-u>zz", { noremap = true })
 
 -- Moving text
 vim.keymap.set("v", "<M-j>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
