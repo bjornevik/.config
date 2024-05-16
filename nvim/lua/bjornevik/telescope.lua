@@ -78,19 +78,10 @@ telescope.setup {
       override_generic_sorter = true,
       override_file_sorter = true,
     },
-    file_browser = {
-      hidden = true,
-      mappings = {
-        ["i"] = {
-          ["<M-n>"] = require("telescope").extensions.file_browser.actions.create_from_prompt,
-        },
-      },
-    },
   },
 }
 
 telescope.load_extension "fzy_native"
-telescope.load_extension "file_browser"
 telescope.load_extension "undo"
 telescope.load_extension "neoclip"
 
@@ -115,7 +106,6 @@ vim.keymap.set("n", "<leader>fr", telescope_builtin.lsp_references, { noremap = 
 vim.keymap.set("n", "<leader>ws", telescope_builtin.lsp_workspace_symbols, { noremap = true })
 vim.keymap.set("n", "<leader>ds", telescope_builtin.lsp_document_symbols, { noremap = true })
 
-vim.keymap.set("n", "<leader>fb", telescope.extensions.file_browser.file_browser, { noremap = true })
 vim.keymap.set("n", "<leader>tu", telescope.extensions.undo.undo, { noremap = true })
 vim.keymap.set("n", "<leader>vrc", M.search_dotfiles, { noremap = true })
 
