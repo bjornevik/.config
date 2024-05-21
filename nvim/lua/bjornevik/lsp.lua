@@ -143,18 +143,6 @@ require("lspconfig").eslint.setup {
   capabilities = capabilities,
 }
 
-local function lspSymbol(name, icon)
-  vim.fn.sign_define(
-    "DiagnosticSign" .. name,
-    { text = icon, texthl = "DiagnosticSign" .. name, numhl = "DiagnosticDefault" .. name }
-  )
-end
-lspSymbol("Error", " ")
-lspSymbol("Warning", " ")
-lspSymbol("Hint", " ")
-lspSymbol("Information", " ")
-lspSymbol("Info", " ")
-
 -- Folke/Trouble.nvim
 vim.keymap.set("n", "<C-q>", ":TroubleToggle quickfix<CR>", { noremap = true, silent = true })
 
