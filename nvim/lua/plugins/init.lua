@@ -38,21 +38,6 @@ return {
   },
   { "numToStr/Comment.nvim" },
   {
-    "AckslD/nvim-neoclip.lua",
-    init = function()
-      vim.keymap.set("n", "<leader>nc", require("telescope").extensions.neoclip.neoclip, { noremap = true })
-    end,
-    opts = {
-      keys = {
-        telescope = {
-          i = {
-            paste = "<cr>",
-          },
-        },
-      },
-    },
-  },
-  {
     "cshuaimin/ssr.nvim",
     init = function()
       vim.keymap.set({ "n", "x" }, "<leader>sr", function()

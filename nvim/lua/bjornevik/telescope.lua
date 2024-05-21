@@ -83,7 +83,6 @@ telescope.setup {
 
 telescope.load_extension "fzy_native"
 telescope.load_extension "undo"
-telescope.load_extension "neoclip"
 
 local M = {}
 M.search_dotfiles = function()
