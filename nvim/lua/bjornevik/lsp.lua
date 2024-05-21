@@ -21,6 +21,12 @@ local on_attach = function(client)
   vim.keymap.set("n", "<leader>dp", vim.diagnostic.goto_prev, { buffer = 0 })
   vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = 0 })
   vim.keymap.set("i", "<C-s>", vim.lsp.buf.signature_help, { buffer = 0 })
+  if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
+    vim.lsp.inlay_hint.enable()
+    vim.keymap.set("n", "<leader>lh", function()
+      vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled {})
+    end, { buffer = 0 })
+  end
 
   if client.server_capabilities.codeLensProvider then
     vim.api.nvim_create_augroup("lsp_document_codelens", {})
@@ -50,7 +56,23 @@ capabilities.textDocument.colorProvier = {
   dynamicRegistration = true,
 }
 
-lspconfig.gopls.setup { on_attach = on_attach, capabilities = capabilities }
+lspconfig.gopls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+    gopls = {
+      hints = {
+        assignVariableTypes = true,
+        compositeLiteralFields = true,
+        compositeLiteralTypes = true,
+        constantValues = true,
+        functionTypeParamters = true,
+        parameterNames = true,
+        rangeVariableTypes = true,
+      },
+    },
+  },
+}
 lspconfig.marksman.setup { on_attach = on_attach, capabilities = capabilities }
 lspconfig.vimls.setup { on_attach = on_attach, capabilities = capabilities }
 lspconfig.vuels.setup { on_attach = on_attach, capabilities = capabilities }
@@ -82,6 +104,9 @@ if has_neodev then
       Lua = {
         completion = {
           callSnippet = "Replace",
+        },
+        hint = {
+          enable = true,
         },
       },
     },
@@ -121,6 +146,32 @@ lspconfig.tsserver.setup {
 
       vim.lsp.handlers["textDocument/definition"](err, result, method, ...)
     end,
+  },
+  settings = {
+    typescript = {
+      inlayHints = {
+        includeInlayParameterNameHints = "all",
+        includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+        includeInlayFunctionParameterTypeHints = true,
+        includeInlayVariableTypeHints = true,
+        includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+        includeInlayPropertyDeclarationTypeHints = true,
+        includeInlayFunctionLikeReturnTypeHints = true,
+        includeInlayEnumMemberValueHints = true,
+      },
+    },
+    javascript = {
+      inlayHints = {
+        includeInlayParameterNameHints = "all",
+        includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+        includeInlayFunctionParameterTypeHints = true,
+        includeInlayVariableTypeHints = true,
+        includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+        includeInlayPropertyDeclarationTypeHints = true,
+        includeInlayFunctionLikeReturnTypeHints = true,
+        includeInlayEnumMemberValueHints = true,
+      },
+    },
   },
 }
 
