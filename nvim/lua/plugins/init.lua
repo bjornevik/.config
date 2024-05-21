@@ -23,7 +23,7 @@ return {
   { "nvim-lua/plenary.nvim" },
 
   -- Git
-  { "NeogitOrg/neogit", branch = "nightly" },
+  { "NeogitOrg/neogit" },
   { "sindrets/diffview.nvim" },
   { "lewis6991/gitsigns.nvim" },
 
