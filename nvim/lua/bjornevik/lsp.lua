@@ -27,28 +27,6 @@ local on_attach = function(client)
       vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled {})
     end, { buffer = 0 })
   end
-
-  if client.server_capabilities.codeLensProvider then
-    vim.api.nvim_create_augroup("lsp_document_codelens", {})
-    vim.api.nvim_create_autocmd("BufEnter", {
-      group = "lsp_document_codelens",
-      pattern = "*",
-      callback = function()
-        vim.lsp.codelens.refresh()
-      end,
-      desc = "refreshes codelenses on BufEnter",
-      once = true,
-    })
-    vim.api.nvim_create_autocmd({ "BufWritePost", "CursorHold" }, {
-      group = "lsp_document_codelens",
-      pattern = "*",
-      callback = function()
-        vim.lsp.codelens.refresh()
-      end,
-      desc = "refreshes codelenses on BufWritePost",
-    })
-    vim.keymap.set("n", "<leader>lr", vim.lsp.codelens.run)
-  end
 end
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
