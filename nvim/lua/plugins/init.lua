@@ -29,6 +29,12 @@ return {
 
   -- Utilty
   { "windwp/nvim-autopairs" },
+  {
+    "windwp/nvim-ts-autotag",
+    config = function()
+      require("nvim-ts-autotag").setup {}
+    end,
+  },
   { "wellle/targets.vim" },
   {
     "kylechui/nvim-surround",
@@ -106,7 +112,6 @@ return {
     dependencies = {
       "nvim-treesitter/playground",
       "nvim-treesitter/nvim-treesitter-textobjects",
-      "windwp/nvim-ts-autotag",
       "Ckolkey/ts-node-action",
       {
         "JoosepAlviste/nvim-ts-context-commentstring",
