@@ -36,6 +36,7 @@ vim.keymap.set("x", "Q", ":'<,'>:normal @q<CR>", { noremap = true, silent = true
 
 -- Disable Command history & EX mode
 vim.keymap.set("n", "Q", "<nop>", { noremap = true })
+vim.keymap.set("n", "q:", "<nop>", { noremap = true })
 
 -- Substitute under cursor
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { noremap = true })
