@@ -53,7 +53,7 @@ lspconfig.gopls.setup {
 }
 lspconfig.marksman.setup { on_attach = on_attach, capabilities = capabilities }
 lspconfig.vimls.setup { on_attach = on_attach, capabilities = capabilities }
-lspconfig.vuels.setup { on_attach = on_attach, capabilities = capabilities }
+lspconfig.volar.setup { on_attach = on_attach, capabilities = capabilities }
 lspconfig.astro.setup { on_attach = on_attach, capabilities = capabilities }
 lspconfig.tailwindcss.setup { on_attach = on_attach, capabilities = capabilities }
 lspconfig.ocamllsp.setup {

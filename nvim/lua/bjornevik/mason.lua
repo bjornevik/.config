@@ -10,7 +10,7 @@ require("mason-lspconfig").setup {
     "rust_analyzer",
     "tailwindcss",
     "tsserver",
-    "vuels",
+    "volar",
   },
 }
 
