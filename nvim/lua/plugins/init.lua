@@ -70,7 +70,20 @@ return {
   -- lsp
   { "neovim/nvim-lspconfig" },
   { "nvim-tree/nvim-web-devicons" },
-  { "folke/trouble.nvim" },
+  {
+    "folke/trouble.nvim",
+    config = function()
+      require("trouble").setup {
+        follow = false,
+        modes = {
+          diagnostics_buffer = {
+            mode = "diagnostics",
+            filter = { buf = 0 },
+          },
+        },
+      }
+    end,
+  },
 
   -- language specific plugins
   { "simrat39/rust-tools.nvim" },

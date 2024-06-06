@@ -12,7 +12,9 @@ end
 local on_attach = function(client)
   vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = 0 })
   vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = 0 })
-  vim.keymap.set("n", "gr", "<cmd>TroubleToggle lsp_references<CR>", { buffer = 0 })
+  vim.keymap.set("n", "gr", function()
+    require("trouble").toggle "lsp_references"
+  end, { buffer = 0 })
   vim.keymap.set("n", "gT", vim.lsp.buf.type_definition, { buffer = 0 })
   vim.keymap.set("n", "gI", vim.lsp.buf.implementation, { buffer = 0 })
   vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { buffer = 0 })
@@ -180,16 +182,20 @@ require("lspconfig").eslint.setup {
 }
 
 -- Folke/Trouble.nvim
-vim.keymap.set("n", "<C-q>", ":TroubleToggle quickfix<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-q>", function()
+  require("trouble").toggle "quickfix"
+end, { noremap = true, silent = true })
 
-vim.keymap.set("n", "<leader>q", ":TroubleToggle document_diagnostics<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>q", function()
+  require("trouble").toggle "diagnostics"
+end, { noremap = true, silent = true })
 
 vim.keymap.set("n", "<C-j>", function()
   require("trouble").next { skip_groups = true, jump = true }
 end, { noremap = true })
 
 vim.keymap.set("n", "<C-k>", function()
-  require("trouble").previous { skip_groups = true, jump = true }
+  require("trouble").prev { skip_groups = true, jump = true }
 end, { noremap = true })
 
 -- return on_attach and capabilities so they can be used in instantiating other LSPs in other files (i.e. flutter-tools)
