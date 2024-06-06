@@ -24,7 +24,7 @@ local on_attach = function(client)
   vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = 0 })
   vim.keymap.set("i", "<C-s>", vim.lsp.buf.signature_help, { buffer = 0 })
   if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
-    -- vim.lsp.inlay_hint.enable()
+    vim.lsp.inlay_hint.enable()
     vim.keymap.set("n", "<leader>lh", function()
       vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled {})
     end, { buffer = 0 })
