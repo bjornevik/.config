@@ -19,10 +19,11 @@ local on_attach = function(client)
   vim.keymap.set("n", "gI", vim.lsp.buf.implementation, { buffer = 0 })
   vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { buffer = 0 })
   vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action, { buffer = 0 })
-  vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next, { buffer = 0 })
-  vim.keymap.set("n", "<leader>dp", vim.diagnostic.goto_prev, { buffer = 0 })
   vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = 0 })
   vim.keymap.set("i", "<C-s>", vim.lsp.buf.signature_help, { buffer = 0 })
+  vim.keymap.set("n", "<leader>ds", function()
+    require("trouble").toggle "lsp_document_symbols"
+  end, { buffer = 0 })
   if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
     vim.lsp.inlay_hint.enable()
     vim.keymap.set("n", "<leader>lh", function()

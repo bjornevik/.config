@@ -84,8 +84,13 @@ return {
             follow = false,
             auto_jump = false,
           },
+          lsp_document_symbols = {
+            desc = "document symbols",
+            mode = "lsp_document_symbols",
+            focus = true,
+            win = { position = "right" },
+          },
         },
-        follow = false,
       }
     end,
   },

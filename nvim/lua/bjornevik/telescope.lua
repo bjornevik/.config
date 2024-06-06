@@ -103,7 +103,6 @@ vim.keymap.set("n", "<leader>fg", telescope_builtin.git_files, { noremap = true 
 vim.keymap.set("n", "<leader>fh", telescope_builtin.help_tags, { noremap = true })
 vim.keymap.set("n", "<leader>fr", telescope_builtin.lsp_references, { noremap = true })
 vim.keymap.set("n", "<leader>ws", telescope_builtin.lsp_workspace_symbols, { noremap = true })
-vim.keymap.set("n", "<leader>ds", telescope_builtin.lsp_document_symbols, { noremap = true })
 
 vim.keymap.set("n", "<leader>tu", telescope.extensions.undo.undo, { noremap = true })
 vim.keymap.set("n", "<leader>vrc", M.search_dotfiles, { noremap = true })
