@@ -74,13 +74,18 @@ return {
     "folke/trouble.nvim",
     config = function()
       require("trouble").setup {
-        follow = false,
         modes = {
           diagnostics_buffer = {
             mode = "diagnostics",
             filter = { buf = 0 },
           },
+          lsp_references = {
+            mode = "lsp_references",
+            follow = false,
+            auto_jump = false,
+          },
         },
+        follow = false,
       }
     end,
   },
