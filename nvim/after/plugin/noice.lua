@@ -1,3 +1,9 @@
+require("notify").setup {
+  max_height = 3,
+}
+
+vim.keymap.set("n", "<leader>nd", require("notify").dismiss, { desc = "Dismiss notification", noremap = true })
+
 require("noice").setup {
   lsp = {
     -- override markdown rendering so that **cmp** and other plugins use **Treesitter**

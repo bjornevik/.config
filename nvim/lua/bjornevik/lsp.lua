@@ -25,7 +25,7 @@ local on_attach = function(client)
     require("trouble").toggle "lsp_document_symbols"
   end, { buffer = 0 })
   if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
-    vim.lsp.inlay_hint.enable()
+    -- vim.lsp.inlay_hint.enable()
     vim.keymap.set("n", "<leader>lh", function()
       vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled {})
     end, { buffer = 0 })
@@ -161,6 +161,24 @@ lspconfig.tsserver.setup {
         includeInlayEnumMemberValueHints = true,
       },
     },
+  },
+  init_options = {
+    plugins = {
+      {
+        name = "@vue/typescript-plugin",
+        location = "/usr/local/lib/node_modules/@vue/typescript-plugin",
+        languages = { "javascript", "typescript", "vue" },
+      },
+    },
+  },
+  filetypes = {
+    "javascript",
+    "javascriptreact",
+    "javascript.jsx",
+    "typescript",
+    "typescriptreact",
+    "typescript.tsx",
+    "vue",
   },
 }
 
