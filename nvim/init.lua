@@ -35,6 +35,7 @@ require("lazy").setup("plugins", {
   -- `kex_exchange_identification: read connection reset by peer could not read from remote repository`
   -- limiting concurrency seems to fix it 🤷
   concurrency = 8,
+  rocks = { enabled = false },
 })
 require "defaults"
 require "bjornevik"
