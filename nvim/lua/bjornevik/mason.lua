@@ -9,7 +9,7 @@ require("mason-lspconfig").setup {
     "ocamllsp",
     "rust_analyzer",
     "tailwindcss",
-    "tsserver",
+    "ts_ls",
     "volar",
   },
 }
