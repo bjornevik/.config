@@ -59,6 +59,9 @@ return {
     end,
   },
   "github/copilot.vim", -- <TAB> to accept suggestion
+  {
+    "jake-stewart/multicursor.nvim",
+  },
 
   -- Adds textobject for camelCase, kebab-case etc, civ, div
   { "Julian/vim-textobj-variable-segment", dependencies = "kana/vim-textobj-user" },
