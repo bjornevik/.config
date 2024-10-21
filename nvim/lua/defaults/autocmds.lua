@@ -42,7 +42,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   group = "bjornevik",
   pattern = "*",
   callback = function()
-    require("vim.highlight").on_yank()
+    require("vim.hl").on_yank()
   end,
   desc = "Highlight on yank",
 })
