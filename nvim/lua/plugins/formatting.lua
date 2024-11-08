@@ -8,6 +8,7 @@ return {
         format_on_save = {
           timeout_ms = 500,
           lsp_fallback = true,
+          stop_after_first = true,
         },
         formatters_by_ft = {
           astro = { "prettierd", "prettier" },
