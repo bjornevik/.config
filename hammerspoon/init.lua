@@ -11,6 +11,7 @@ end
 
 local hyper = { "cmd", "alt", "ctrl", "shift" }
 
+hs.hotkey.bind(hyper, "d", open_app("DBeaver")) -- (d)beaver
 hs.hotkey.bind(hyper, "s", open_app("Slack")) -- (s)lack
 hs.hotkey.bind(hyper, "e", open_app("Microsoft Outlook")) -- (e)mail
 hs.hotkey.bind(hyper, "w", open_app("Firefox")) -- (w)eb
