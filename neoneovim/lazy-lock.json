@@ -4,5 +4,8 @@
   "mini.nvim": { "branch": "main", "commit": "690a3b4c78c4956f7ecf770124b522d32084b872" },
   "nvim-treesitter": { "branch": "master", "commit": "c56507f6a16d6a9bd73ab8827a49fa5533aa8fc3" },
   "oil.nvim": { "branch": "master", "commit": "9a59256c8e88b29d2150e99b5960b2f111e51f75" },
+  "plenary.nvim": { "branch": "master", "commit": "2d9b06177a975543726ce5c73fca176cedbffe9d" },
+  "telescope-fzy-native.nvim": { "branch": "master", "commit": "282f069504515eec762ab6d6c89903377252bf5b" },
+  "telescope.nvim": { "branch": "master", "commit": "2eca9ba22002184ac05eddbe47a7fe2d5a384dfc" },
   "tokyonight.nvim": { "branch": "main", "commit": "15d83cda572d7498b43bbdaa223bc75bf341183e" }
 }
