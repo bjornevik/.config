@@ -77,9 +77,9 @@ return {
 			local builtin = require("telescope.builtin")
 			return {
 				{ "<leader>ff", builtin.find_files, noremap = true, desc = "(f)ind (f)iles" },
-				{ "<leader>tb", builtin.buffers, noremap = true, desc = "(t)elescope (b)uffers" },
-				{ "<leader>fs", builtin.live_grep, noremap = true, desc = "(f)ind (s)tring" },
-				{ "<leader>fh", builtin.help_tags, noremap = true, desc = "(f)ind (h)elp" },
+				{ "<leader>tb", builtin.buffers,    noremap = true, desc = "(t)elescope (b)uffers" },
+				{ "<leader>fs", builtin.live_grep,  noremap = true, desc = "(f)ind (s)tring" },
+				{ "<leader>fh", builtin.help_tags,  noremap = true, desc = "(f)ind (h)elp" },
 			}
 		end,
 	},

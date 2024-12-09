@@ -10,8 +10,8 @@ return {
 			}
 		},
 		keys = {
-			{ "s", "<Plug>(leap-forward)", mode = {"n", "x"}, noremap = false, desc = "leap forward" },
-			{ "gs", "<Plug>(leap-backward)", mode = {"n", "x"}, noremap = false, desc = "leap backward" },
+			{ "s",  "<Plug>(leap-forward)",  mode = { "n", "x" }, noremap = false, desc = "leap forward" },
+			{ "gs", "<Plug>(leap-backward)", mode = { "n", "x" }, noremap = false, desc = "leap backward" },
 		}
 	},
 }
