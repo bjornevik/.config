@@ -1,7 +1,3 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-vim.g.have_nerd_font = true
-
 -- sync OS and Neovim clipboards
 vim.opt.clipboard = "unnamedplus"
 
@@ -24,7 +20,6 @@ vim.opt.smartcase = true
 vim.opt.updatetime = 250
 
 vim.opt.splitright = true
-vim.opt.splitbelow = true
 
 vim.opt.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }

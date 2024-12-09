@@ -8,6 +8,11 @@
 
 -- Make sure to setup `mapLeader` and `maplocalleader` before
 -- loading lazy.nvim so that the mappings are correct.
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+vim.g.have_nerd_font = true
+
+
 require("config.common")
 
 require("config.lazy")

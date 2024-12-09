@@ -4,21 +4,14 @@ return {
 		enabled = true,
 		dependencies = {
 			"tpope/vim-repeat",
+			{
+				"ggandor/flit.nvim",
+				opts = {}
+			}
 		},
 		keys = {
 			{ "s", "<Plug>(leap-forward)", mode = {"n", "x"}, noremap = false, desc = "leap forward" },
-			{ "S", "<Plug>(leap-backward)", noremap = false, desc = "leap backward" },
-			{ "gs", "<Plug>(leap-backward)", mode = {"x"}, noremap = false, desc = "leap backward (visual mode)" },
+			{ "gs", "<Plug>(leap-backward)", mode = {"n", "x"}, noremap = false, desc = "leap backward" },
 		}
 	},
-	{
-		-- improves f/F/t/T according to leap.nvim
-		"ggandor/flit.nvim",
-		enabled = true,
-		dependencies = {
-			"ggandor/leap.nvim",
-			"tpope/vim-repeat"
-		},
-		opts = {}
-	}
 }

@@ -5,6 +5,7 @@ return {
 		dependencies = {
 			"nvim-telescope/telescope-fzy-native.nvim",
 			"nvim-lua/plenary.nvim",
+			"nvim-tree/nvim-web-devicons"
 		},
 		opts = function()
 			local actions = require("telescope.actions")
