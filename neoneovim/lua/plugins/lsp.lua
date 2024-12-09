@@ -17,6 +17,8 @@ return {
 		},
 		config = function()
 			require("lspconfig").lua_ls.setup {}
+
+			vim.keymap.set("n", "<space>nf", function() vim.lsp.buf.format() end, { desc = "lsp format" })
 		end
 	}
 }
