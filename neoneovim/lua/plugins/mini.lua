@@ -3,8 +3,8 @@ return {
 		"echasnovski/mini.statusline",
 		enabled = true,
 		opts = {
-			use_icons = true
-		}
+			use_icons = true,
+		},
 	},
 	{
 		"echasnovski/mini.surround",
@@ -22,7 +22,7 @@ return {
 				update_n_lines = "",
 				suffix_last = "",
 				suffix_next = "",
-			}
-		}
-	}
+			},
+		},
+	},
 }
