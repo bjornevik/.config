@@ -68,6 +68,9 @@ return {
 					current_buffer_fuzzy_find = {
 						theme = "ivy"
 					}
+				},
+				extensions = {
+					fzf = {}
 				}
 			}
 		end,
