@@ -5,16 +5,19 @@ return {
 	lazy = false,
 	---@type snacks.Config
 	opts = {
-		bigfile = { enabled = false },
+		bigfile = { enabled = true },
+		notify = { enabled = true },
 		notifier = { enabled = true },
-		quickfile = { enabled = false },
-		statuscolumn = { enabled = false },
-		words = { enabled = false }
+		quickfile = { enabled = true },
+		statuscolumn = { enabled = true },
+		words = { enabled = false },
+		dashboard = { enabled = true },
 	},
 	keys = {
-		{ "<leader>lg", function() Snacks.lazygit() end,        desc = "(l)azy(g)it" },
-		{ "<leader>.",  function() Snacks.scratch() end,        desc = "toggle scratch buffer" },
-		{ "<leader>gb", function() Snacks.git.blame_line() end, desc = "(g)it (b)lame line" },
-		{ "<leader>un", function() Snacks.notifier.hide() end,  desc = "dismiss all notifications" }
+		{ "<leader>lg", function() Snacks.lazygit() end,               desc = "(l)azy(g)it" },
+		{ "<leader>.",  function() Snacks.scratch() end,               desc = "toggle scratch buffer" },
+		{ "<leader>gb", function() Snacks.git.blame_line() end,        desc = "(g)it (b)lame line" },
+		{ "<leader>un", function() Snacks.notifier.hide() end,         desc = "dismiss all notifications" },
+		{ "<leader>nh", function() Snacks.notifier.show_history() end, desc = "show (n)otification (h)istory" }
 	}
 }
