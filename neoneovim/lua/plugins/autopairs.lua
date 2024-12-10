@@ -2,6 +2,12 @@ return {
 	{
 		"windwp/nvim-autopairs",
 		enabled = true,
+		dependencies = {
+			{
+				"windwp/nvim-ts-autotag",
+				opts = {}
+			}
+		},
 		opts = {
 			ignored_next_char = "",
 			enable_check_bracket_line = true,
@@ -10,9 +16,4 @@ return {
 			auto_select = true
 		}
 	},
-	{
-		"windwp/nvim-ts-autotag",
-		enabled = true,
-		opts = {},
-	}
 }
