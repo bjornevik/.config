@@ -3,7 +3,7 @@ return {
 		"nvim-telescope/telescope.nvim",
 		enabled = true,
 		dependencies = {
-			"nvim-telescope/telescope-fzy-native.nvim",
+			{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release' },
 			"nvim-lua/plenary.nvim",
 			"nvim-tree/nvim-web-devicons"
 		},
@@ -14,7 +14,7 @@ return {
 
 			return {
 				defaults = {
-					prompt_prefix = " ",
+					prompt_prefix = "  ",
 					color_devicones = true,
 					path_display = { "truncate" },
 					layout_config = {
@@ -49,38 +49,57 @@ return {
 					preview = {
 						treesitter = false,
 					},
-					pickers = {
-						buffers = {
-							mappings = {
-								i = {
-									["<C-r>"] = "delete_buffer",
-								},
+				},
+				pickers = {
+					buffers = {
+						theme = "dropdown",
+						mappings = {
+							i = {
+								["<C-x>"] = "delete_buffer",
 							},
 						},
-						find_files = {
-							hidden = true,
-						},
-						live_grep = {
-							hidden = true,
-						},
 					},
-				},
-				extensions = {
-					fzy_native = {
-						override_generic_sorter = true,
-						override_file_sorter = true,
+					find_files = {
+						hidden = true,
 					},
-				},
+					live_grep = {
+						hidden = true,
+					},
+					current_buffer_fuzzy_find = {
+						theme = "ivy"
+					}
+				}
 			}
 		end,
 		keys = function()
 			local builtin = require("telescope.builtin")
 			return {
-				{ "<leader>ff", builtin.find_files, noremap = true, desc = "(f)ind (f)iles" },
-				{ "<leader>tb", builtin.buffers,    noremap = true, desc = "(t)elescope (b)uffers" },
-				{ "<leader>fs", builtin.live_grep,  noremap = true, desc = "(f)ind (s)tring" },
-				{ "<leader>fh", builtin.help_tags,  noremap = true, desc = "(f)ind (h)elp" },
+				{ "<leader>ff", builtin.find_files,                noremap = true, desc = "(f)ind (f)iles" },
+				{ "<leader>tb", builtin.buffers,                   noremap = true, desc = "(t)elescope (b)uffers" },
+				{ "<leader>o",  builtin.buffers,                   noremap = true, desc = "(o)pen buffers" },
+				{ "<leader>fs", builtin.live_grep,                 noremap = true, desc = "(f)ind (s)tring" },
+				{ "<leader>bf", builtin.current_buffer_fuzzy_find, noremap = true, desc = "(b)uffer (f)fuzzy find" },
+				{ "<leader>fh", builtin.help_tags,                 noremap = true, desc = "(f)ind (h)elp" },
 			}
 		end,
+		init = function()
+			-- Need to load `fzf` somewhere after setup
+			require("telescope").load_extension("fzf")
+
+			-- autocmd to provide additional keymaps on `LspAttach`
+			vim.api.nvim_create_autocmd('LspAttach', {
+				callback = function(args)
+					local client = vim.lsp.get_client_by_id(args.data.client_id)
+					if not client then return end
+
+					local builtin = require("telescope.builtin")
+					---@disagnostic disable-next-line: missing-parameter
+					if client.supports_method('textDocument/documentSymbol') then
+						vim.keymap.set('n', '<leader>ds', builtin.lsp_document_symbols,
+							{ noremap = true, desc = "(d)ocument (s)ymbols" })
+					end
+				end
+			})
+		end
 	},
 }
