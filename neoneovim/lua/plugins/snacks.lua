@@ -6,7 +6,7 @@ return {
 	---@type snacks.Config
 	opts = {
 		bigfile = { enabled = false },
-		notifier = { enabled = false },
+		notifier = { enabled = true },
 		quickfile = { enabled = false },
 		statuscolumn = { enabled = false },
 		words = { enabled = false }
