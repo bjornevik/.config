@@ -22,7 +22,7 @@ vim.opt.updatetime = 250
 vim.opt.splitright = true
 
 vim.opt.list = true
-vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣", space = "·" }
 
 vim.opt.inccommand = "split"
 
