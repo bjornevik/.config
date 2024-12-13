@@ -78,7 +78,6 @@ return {
 			local builtin = require("telescope.builtin")
 			local mg = require("config.telescope_pickers.multigrep")
 
-
 			return {
 				{ "<leader>ff", builtin.find_files,                noremap = true, desc = "(f)ind (f)iles" },
 				{ "<leader>tb", builtin.buffers,                   noremap = true, desc = "(t)elescope (b)uffers" },
