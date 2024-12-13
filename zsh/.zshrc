@@ -45,6 +45,7 @@ export FLUTTER_SDK="$HOME/flutter/bin"
 export PATH="$PATH:$FLUTTER_SDK"
 ANDROID_PLATFORM_TOOLS="$HOME/Library/Android/sdk/platform-tools"
 ANDROID_TOOLS="$HOME/Library/Android/sdk/tools"
+export ANDROID_HOME="$HOME/Library/Android/sdk"
 export PATH="$PATH:$ANDROID_PLATFORM_TOOLS:$ANDROID_TOOLS"
 
 alias nv="nvim"
