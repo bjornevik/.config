@@ -9,6 +9,7 @@ return {
 			},
 			"nvim-lua/plenary.nvim",
 			"nvim-tree/nvim-web-devicons",
+			"nvim-telescope/telescope-frecency.nvim",
 		},
 		opts = function()
 			local actions = require "telescope.actions"
@@ -74,6 +75,7 @@ return {
 				},
 				extensions = {
 					fzf = {},
+					frecency = {},
 				},
 			}
 		end,
@@ -94,6 +96,7 @@ return {
 		init = function()
 			-- Need to load `fzf` somewhere after setup
 			require("telescope").load_extension "fzf"
+			require("telescope").load_extension "frecency"
 
 			-- autocmd to provide additional keymaps on `LspAttach`
 			vim.api.nvim_create_autocmd("LspAttach", {
