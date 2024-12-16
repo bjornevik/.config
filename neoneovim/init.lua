@@ -12,10 +12,9 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.g.have_nerd_font = true
 
+require "config.common"
 
-require("config.common")
-
-require("config.lazy")
+require "config.lazy"
 
 vim.keymap.set("n", "<space><space>x", "<cmd> source %<CR>")
 vim.keymap.set("n", "<space>x", ":.lua<CR>")

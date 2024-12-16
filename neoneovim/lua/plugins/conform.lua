@@ -24,9 +24,15 @@ return {
 			},
 		},
 		keys = function()
-			local cf = require("conform")
+			local cf = require "conform"
 			return {
-				{ "<leader>nf", function()cf.format { async = true, lsp_format = "fallback", stop_after_first = true} end, desc = "conform: format" },
+				{
+					"<leader>nf",
+					function()
+						cf.format { async = true, lsp_format = "fallback", stop_after_first = true }
+					end,
+					desc = "conform: format",
+				},
 			}
 		end,
 	},

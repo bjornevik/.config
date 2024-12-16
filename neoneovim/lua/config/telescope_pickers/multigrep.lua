@@ -1,7 +1,7 @@
 local pickers = require "telescope.pickers"
 local finders = require "telescope.finders"
 local make_entry = require "telescope.make_entry"
-local config = require "telescope.config".values
+local config = require("telescope.config").values
 local sorters = require "telescope.sorters"
 
 local M = {}
@@ -19,9 +19,9 @@ local live_multigrep = function(opts)
 			end
 
 			local pieces = vim.split(prompt, "  ") -- Two spaces
-			local args = { "rg" }               -- RipGrep
+			local args = { "rg" } -- RipGrep
 			if pieces[1] then
-				table.insert(args, "-e")          -- "rg --help" -> "-e defines pattern to search for"
+				table.insert(args, "-e") -- "rg --help" -> "-e defines pattern to search for"
 				table.insert(args, pieces[1])
 			end
 
@@ -31,23 +31,27 @@ local live_multigrep = function(opts)
 			end
 
 			-- vim.tbl_flatten{} is deprecated use vim.iter{}:flatten():totable()
-			return vim.iter {
+			return vim.iter({
 				args,
 				-- extra ripgrep flags to make it play nice with telescope
-				{ "--color=never", "--no-heading", "--with-filename", "--line-number", "--column", "--smart-case" }
-			}:flatten():totable()
+				{ "--color=never", "--no-heading", "--with-filename", "--line-number", "--column", "--smart-case" },
+			})
+				:flatten()
+				:totable()
 		end,
 		entry_maker = make_entry.gen_from_vimgrep(opts),
-		cwd = opts.cwd
+		cwd = opts.cwd,
 	}
 
-	pickers.new(opts, {
-		debounce = 100,
-		prompt_title = "Live MultiGrep",
-		finder = finder,
-		previewer = config.grep_previewer(opts),
-		sorter = sorters.empty()
-	}):find()
+	pickers
+		.new(opts, {
+			debounce = 100,
+			prompt_title = "Live MultiGrep",
+			finder = finder,
+			previewer = config.grep_previewer(opts),
+			sorter = sorters.empty(),
+		})
+		:find()
 end
 
 --- Live MultiGrep (with filetypes!)

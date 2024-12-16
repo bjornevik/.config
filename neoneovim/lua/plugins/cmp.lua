@@ -7,13 +7,13 @@ return {
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",
 			"hrsh7th/cmp-nvim-lua",
-			"onsails/lspkind-nvim"
+			"onsails/lspkind-nvim",
 			-- { "rafamadriz/friendly-snippets" },
 			-- { "L3MON4D3/LuaSnip" },
 			-- { "saadparwaiz1/cmp_luasnip" },
 		},
 		opts = function()
-			local cmp = require("cmp")
+			local cmp = require "cmp"
 			return {
 				mapping = {
 					["<C-n>"] = cmp.mapping.select_next_item(),
@@ -44,17 +44,17 @@ return {
 							nvim_lua = "[Lua]",
 						})[entry.source.name]
 						return vim_item
-					end
+					end,
 				},
 				cmdline = {
 					mapping = cmp.mapping.preset.cmdline(),
-					sources = { { name = "buffer" } }
-				}
+					sources = { { name = "buffer" } },
+				},
 			}
-		end
+		end,
 		-- init = function()
 		-- 	local cmp_autopairs = require "nvim-autopairs.completion.cmp"
 		-- 	cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done { map_char = { tex = "" } })
 		-- end
-	}
+	},
 }

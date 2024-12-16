@@ -6,12 +6,12 @@ return {
 			"tpope/vim-repeat",
 			{
 				"ggandor/flit.nvim",
-				opts = {}
-			}
+				opts = {},
+			},
 		},
 		keys = {
-			{ "s",  "<Plug>(leap-forward)",  mode = { "n", "x" }, noremap = false, desc = "leap forward" },
+			{ "s", "<Plug>(leap-forward)", mode = { "n", "x" }, noremap = false, desc = "leap forward" },
 			{ "gs", "<Plug>(leap-backward)", mode = { "n", "x" }, noremap = false, desc = "leap backward" },
-		}
+		},
 	},
 }
