@@ -108,7 +108,7 @@ return {
 
 					local builtin = require "telescope.builtin"
 					---@disagnostic disable-next-line: missing-parameter
-					if client.supports_method "textDocument/documentSymbol" then
+					if client.supports_method(client, "textDocument/documentSymbol") then
 						vim.keymap.set(
 							"n",
 							"<leader>ds",
