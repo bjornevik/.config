@@ -9,7 +9,7 @@ if not has_lspconfig then
 end
 
 -- LSP settings
-local on_attach = function(client)
+local on_attach = function()
   vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = 0 })
   vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = 0 })
   vim.keymap.set("n", "gr", function()
@@ -24,12 +24,9 @@ local on_attach = function(client)
   vim.keymap.set("n", "<leader>ds", function()
     require("trouble").toggle "lsp_document_symbols"
   end, { buffer = 0 })
-  if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
-    -- vim.lsp.inlay_hint.enable()
-    vim.keymap.set("n", "<leader>lh", function()
-      vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled {})
-    end, { buffer = 0 })
-  end
+  vim.keymap.set("n", "<leader>lh", function()
+    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled {})
+  end, { buffer = 0 })
 end
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
