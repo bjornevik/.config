@@ -24,7 +24,7 @@ local on_attach = function()
   vim.keymap.set("n", "<leader>ds", function()
     require("trouble").toggle "lsp_document_symbols"
   end, { buffer = 0 })
-  vim.keymap.set("n", "<leader>lh", function()
+  vim.keymap.set("n", "<leader>uh", function()
     vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled {})
   end, { buffer = 0 })
 end
