@@ -54,48 +54,7 @@ return {
 			lspconfig.marksman.setup(lspsettings.default)
 			lspconfig.tailwindcss.setup(lspsettings.default)
 
-			-- Use autocmd instead of on attach
-			vim.api.nvim_create_autocmd("LspAttach", {
-				group = vim.api.nvim_create_augroup("custom_on_attach", {}),
-				callback = function(args)
-					local client = vim.lsp.get_client_by_id(args.data.client_id)
-					if not client then
-						return
-					end
-
-					if client.supports_method(client, "textDocument/hover") then
-						vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = 0 })
-					end
-
-					if client.supports_method(client, "textDocument/definition") then
-						vim.keymap.set(
-							"n",
-							"gd",
-							vim.lsp.buf.definition,
-							{ buffer = 0, desc = "LSP: Go to definition" }
-						)
-					end
-
-					if client.supports_method(client, "textDocument/inlayHint") then
-						vim.keymap.set("n", "<leader>uh", function()
-							vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-						end, { noremap = true, desc = "LSP inlay hints", buffer = 0 })
-					end
-
-					if client.supports_method(client, "textDocument/rename") then
-						vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { buffer = 0, desc = "LSP: rename" })
-					end
-
-					if client.supports_method(client, "textDocument/codeAction") then
-						vim.keymap.set(
-							"n",
-							"<leader>a",
-							vim.lsp.buf.code_action,
-							{ buffer = 0, desc = "LSP: code action" }
-						)
-					end
-				end,
-			})
+			lspsettings.setup_lsp_attach()
 		end,
 	},
 }
