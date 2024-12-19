@@ -1,9 +1,29 @@
+local lua_ls_settings = {
+	Lua = {
+		hint = { enable = true },
+	},
+}
+
+local js_ts_inlayhints = {
+	inlayHints = {
+		includeInlayParameterNameHints = "all",
+		includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+		includeInlayFunctionParameterTypeHints = true,
+		includeInlayVariableTypeHints = true,
+		includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+		includeInlayPropertyDeclarationTypeHints = true,
+		includeInlayFunctionLikeReturnTypeHints = true,
+		includeInlayEnumMemberValueHints = true,
+	},
+}
+
 return {
 	{
 		"neovim/nvim-lspconfig",
 		enabled = true,
 		dependencies = {
 			{
+				"saghen/blink.cmp",
 				"folke/lazydev.nvim",
 				ft = "lua", -- only load on lua files
 				opts = {
@@ -16,14 +36,6 @@ return {
 			},
 		},
 		config = function()
-			require("lspconfig").lua_ls.setup {
-				settings = {
-					Lua = {
-						hint = { enable = true },
-					},
-				},
-			}
-
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("custom_on_attach", {}),
 				callback = function(args)
@@ -70,6 +82,47 @@ return {
 					-- vim.keymap.set("n", "gI", vim.lsp.buf.implementation, { buffer = 0 })
 				end,
 			})
+
+			local lspconfig = require "lspconfig"
+			local capabilities = require("blink.cmp").get_lsp_capabilities()
+
+			-- LUA
+			lspconfig.lua_ls.setup {
+				capabilities = capabilities,
+				settings = lua_ls_settings,
+			}
+
+			-- ts/tsx/vue
+			lspconfig.eslint.setup { capabilities = capabilities }
+			-- lspconfig.volar.setup {}
+			lspconfig.ts_ls.setup {
+				capabilities = capabilities,
+				settings = {
+					typescript = js_ts_inlayhints,
+					javascript = js_ts_inlayhints,
+				},
+				init_options = {
+					plugins = {
+						{
+							name = "@vue/typescript-plugin",
+							location = "/usr/local/lib/node_modules/@vue/typescript-plugin",
+							languages = { "javascript", "typescript", "vue" },
+						},
+					},
+				},
+				filetypes = {
+					"javascript",
+					"javascriptreact",
+					"javascript.jsx",
+					"typescript",
+					"typescriptreact",
+					"typescript.tsx",
+					"vue",
+				},
+			}
+
+			-- css
+			-- lspconfig.tailwindcss.setup {}
 		end,
 	},
 }
