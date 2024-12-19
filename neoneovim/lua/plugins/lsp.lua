@@ -1,29 +1,29 @@
-local lua_ls_settings = {
-	Lua = {
-		hint = { enable = true },
-	},
-}
-
-local js_ts_inlayhints = {
-	inlayHints = {
-		includeInlayParameterNameHints = "all",
-		includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-		includeInlayFunctionParameterTypeHints = true,
-		includeInlayVariableTypeHints = true,
-		includeInlayVariableTypeHintsWhenTypeMatchesName = false,
-		includeInlayPropertyDeclarationTypeHints = true,
-		includeInlayFunctionLikeReturnTypeHints = true,
-		includeInlayEnumMemberValueHints = true,
-	},
-}
-
 return {
 	{
 		"neovim/nvim-lspconfig",
 		enabled = true,
 		dependencies = {
+			"saghen/blink.cmp",
 			{
-				"saghen/blink.cmp",
+				"williamboman/mason-lspconfig.nvim",
+				dependencies = {
+					"williamboman/mason.nvim",
+					opts = {},
+				},
+				opts = {
+					ensure_installed = {
+						"lua_ls",
+						"ts_ls",
+						"gopls",
+						"ocamllsp",
+						"eslint",
+						"volar",
+						"marksman",
+						"tailwindcss",
+					},
+				},
+			},
+			{
 				"folke/lazydev.nvim",
 				ft = "lua", -- only load on lua files
 				opts = {
@@ -35,7 +35,26 @@ return {
 				},
 			},
 		},
+		opts = {
+			inlay_hints = {
+				enabled = true,
+				exclude = { "vue" },
+			},
+		},
 		config = function()
+			local lspconfig = require "lspconfig"
+			local lspsettings = require "config.lsp.settings"
+
+			lspconfig.lua_ls.setup(lspsettings.lua_ls)
+			lspconfig.ts_ls.setup(lspsettings.ts_ls)
+			lspconfig.gopls.setup(lspsettings.gopls)
+			lspconfig.ocamllsp.setup(lspsettings.ocamllsp)
+			lspconfig.eslint.setup(lspsettings.default)
+			lspconfig.volar.setup(lspsettings.default)
+			lspconfig.marksman.setup(lspsettings.default)
+			lspconfig.tailwindcss.setup(lspsettings.default)
+
+			-- Use autocmd instead of on attach
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("custom_on_attach", {}),
 				callback = function(args)
@@ -75,54 +94,8 @@ return {
 							{ buffer = 0, desc = "LSP: code action" }
 						)
 					end
-
-					-- TODO: I never actually use these, do I need to add them?
-					-- vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = 0 })
-					-- vim.keymap.set("n", "gT", vim.lsp.buf.type_definition, { buffer = 0 })
-					-- vim.keymap.set("n", "gI", vim.lsp.buf.implementation, { buffer = 0 })
 				end,
 			})
-
-			local lspconfig = require "lspconfig"
-			local capabilities = require("blink.cmp").get_lsp_capabilities()
-
-			-- LUA
-			lspconfig.lua_ls.setup {
-				capabilities = capabilities,
-				settings = lua_ls_settings,
-			}
-
-			-- ts/tsx/vue
-			lspconfig.eslint.setup { capabilities = capabilities }
-			-- lspconfig.volar.setup {}
-			lspconfig.ts_ls.setup {
-				capabilities = capabilities,
-				settings = {
-					typescript = js_ts_inlayhints,
-					javascript = js_ts_inlayhints,
-				},
-				init_options = {
-					plugins = {
-						{
-							name = "@vue/typescript-plugin",
-							location = "/usr/local/lib/node_modules/@vue/typescript-plugin",
-							languages = { "javascript", "typescript", "vue" },
-						},
-					},
-				},
-				filetypes = {
-					"javascript",
-					"javascriptreact",
-					"javascript.jsx",
-					"typescript",
-					"typescriptreact",
-					"typescript.tsx",
-					"vue",
-				},
-			}
-
-			-- css
-			-- lspconfig.tailwindcss.setup {}
 		end,
 	},
 }
