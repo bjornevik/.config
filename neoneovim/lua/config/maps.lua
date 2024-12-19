@@ -15,3 +15,6 @@ vim.keymap.set("i", ",", ",<C-g>u", { noremap = true })
 vim.keymap.set("i", ".", ".<C-g>u", { noremap = true })
 vim.keymap.set("i", "!", "!<C-g>u", { noremap = true })
 vim.keymap.set("i", "?", "?<C-g>u", { noremap = true })
+
+-- Fast buffer switching
+vim.keymap.set("n", "<Backspace>", "<C-^>", { noremap = true })
