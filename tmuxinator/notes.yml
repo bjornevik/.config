@@ -1,7 +1,7 @@
-# /Users/jbjornevik/.config/tmuxinator/notes.yml
+# /Users/johnbjornevik/.config/tmuxinator/vault.yml
 
-name: notes
-root: ~/projects/bjornevik/work_vault
+name: vault
+root: ~/Projects/bjornevik/work_vault
 
 # Optional tmux socket
 # socket_name: foo
@@ -32,7 +32,7 @@ root: ~/projects/bjornevik/work_vault
 # Pass command line options to tmux. Useful for specifying a different tmux.conf.
 # tmux_options: -f ~/.tmux.mac.conf
 
-# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# Change the command to call tmux. This can be used by derivatives/wrappers like byobu.
 # tmux_command: byobu
 
 # Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
@@ -45,6 +45,6 @@ root: ~/projects/bjornevik/work_vault
 # attach: false
 
 windows:
-  - editor: nvim
-  - scratch: gst
-  - null:
+  - atomic notes: cd 000\ Atomic\ Notes && nv .
+  - markwhen: cd 020\ Markwhen && nv .
+  - scratch:
