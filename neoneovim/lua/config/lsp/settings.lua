@@ -74,10 +74,14 @@ M.gopls = {
 
 M.ocamllsp = {
 	capabilities = capabilities,
+	manual_install = true,
 	settings = {
 		codelens = { enable = true },
 		inlayHints = { enable = true },
+		syntaxDocumentation = { enable = true },
 	},
+
+	server_capabilities = { semanticTokensProvider = false },
 }
 
 ---setup function to run the autocmd for 'LspAttach'
