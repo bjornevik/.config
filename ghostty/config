@@ -1,0 +1,5 @@
+# Gruvbox 4 life
+theme=dark:GruvboxDark,light:GruvboxLight
+
+# 16 font for my old man eyes
+font-size=16
