@@ -19,6 +19,6 @@ return {
 			},
 		},
 		signature = { enabled = true },
-		opts_extend = { "sources.deafult" },
 	},
+	opts_extend = { "sources.deafult" },
 }
