@@ -50,8 +50,11 @@ cycle-layout:
   key: r
 
 select-fullscreen-layout:
-  mod: mod2
-  key: f
+  key: none
+
+# defaults to need to unbind to not interfere with toggle-float
+toggle-tiling: 
+  key: none
 
 toggle-float:
   mod: mod2
