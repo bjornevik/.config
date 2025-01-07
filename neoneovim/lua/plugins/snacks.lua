@@ -45,11 +45,11 @@ return {
 			desc = "toggle scratch buffer",
 		},
 		{
-			"<leader>gb",
+			"<leader>gB",
 			function()
 				Snacks.git.blame_line()
 			end,
-			desc = "(g)it (b)lame line",
+			desc = "(g)it (B)lame line",
 		},
 		{
 			"<leader>un",
