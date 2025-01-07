@@ -26,6 +26,7 @@ return {
 			vim.g.gruvbox_material_disabled_italic_comment = false
 			vim.g.gruvbox_material_foreground = "original"
 			vim.g.gruvbox_material_background = "soft"
+			vim.o.background = "light"
 			vim.cmd.colorscheme "gruvbox-material"
 		end,
 	},
