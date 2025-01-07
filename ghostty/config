@@ -1,5 +1,16 @@
 # Gruvbox 4 life
-theme=dark:GruvboxDark,light:GruvboxLight
+# theme = GruvboxDark
+# trying light theme for fun
+theme = GruvboxLight
 
 # 16 font for my old man eyes
-font-size=16
+font-size = 16
+
+# window config
+window-padding-x = 8
+window-padding-y = 8
+title = ghostty
+background-opacity = 0.90
+
+clipboard-trim-trailing-spaces = true
+
