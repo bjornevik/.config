@@ -14,3 +14,4 @@ background-opacity = 0.90
 
 clipboard-trim-trailing-spaces = true
 
+macos-option-as-alt = true
