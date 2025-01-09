@@ -44,8 +44,7 @@ vim.opt.wrap = false
 vim.api.nvim_create_augroup("custom_opts", {})
 
 -- I don't want to redo this vim.opt in every `ftplugin/*.xx`, so overriding here.
--- This needs to be defined in an autocmd because ftplugins set their own formatoptions
--- ftplugins/ sometimes overrides vim.opt.settings
+-- This needs to be defined in an autocmd because /ftplugins sometimes override the setting in this file
 vim.api.nvim_create_autocmd("FileType", {
 	group = vim.api.nvim_create_augroup("custom_opts", {}),
 	callback = function()
@@ -55,6 +54,10 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.opt.formatoptions:remove { "c", "o" }
 
 		vim.opt.scrolloff = 8
+
+		-- %s - signcolumn (for gitsigns/errors)
+		-- %=%{&nu?(&rnu&&v:relnum?v:relnum:v:lnum):''} - line numbers
+		vim.opt.statuscolumn = "%s%=%{&nu?(&rnu&&v:relnum?v:relnum:v:lnum):''} "
 	end,
 })
 
