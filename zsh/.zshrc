@@ -49,7 +49,7 @@ export ANDROID_HOME="$HOME/Library/Android/sdk"
 export PATH="$PATH:$ANDROID_PLATFORM_TOOLS:$ANDROID_TOOLS"
 
 alias nv="nvim"
-alias nnv="NVIM_APPNAME=neoneovim nv" # new wip neovim config
+# alias nnv="NVIM_APPNAME=neoneovim nv" # new wip neovim config
 alias mux="tmuxinator"
 alias lg="lazygit"
 alias ll="lsd -l -a"

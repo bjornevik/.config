@@ -4,38 +4,27 @@
   / __  |_  / / / / / /_/ /  |/ / __/  | | / // // ,<
  / /_/ / /_/ / /_/ / _, _/ /|  / /___  | |/ // // /| |
 /_____/\____/\____/_/ |_/_/ |_/_____/  |___/___/_/ |_|
-
-This configuration runs on Neovim Nightly
-
-It uses the wbthomason/packer.nvim package manager.
-
-* the lua/plugins.lua file contains the code for the packer.nvim package manager
-* the lua/defaults/ dir contains my basic neovim options.
-* the lua/bjornevik/ dir contains all specialized setup with regards to plugins etc.
-
-I use <space> as my leader key.
 --]]
-local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system {
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  }
-end
-vim.opt.rtp:prepend(lazypath)
 
+-- Make sure to setup `mapLeader` and `maplocalleader` before
+-- loading lazy.nvim so that the mappings are correct.
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+vim.g.have_nerd_font = true
 
-require("lazy").setup("plugins", {
-  -- updating all plugins simultaneously causes
-  -- `kex_exchange_identification: read connection reset by peer could not read from remote repository`
-  -- limiting concurrency seems to fix it 🤷
-  concurrency = 8,
-  rocks = { enabled = false },
+require "config.opts"
+require "config.maps"
+
+require "config.lazy"
+
+vim.keymap.set("n", "<space><space>x", "<cmd> source %<CR>")
+vim.keymap.set("n", "<space>x", ":.lua<CR>")
+vim.keymap.set("v", "<space>x", ":lua<CR>")
+
+vim.api.nvim_create_autocmd("TextYankPost", {
+	desc = "highlight when yanking text",
+	group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
+	callback = function()
+		vim.highlight.on_yank()
+	end,
 })
-require "defaults"
-require "bjornevik"
