@@ -21,6 +21,7 @@ floating:
   - "com.electron.firefoo"
   - "com.usebruno.app"
   - "com.google.android.studio"
+  - "com.google.Chrome"
 
 window-margins: true
 window-margin-size: 5
