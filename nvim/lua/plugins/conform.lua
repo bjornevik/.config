@@ -16,7 +16,7 @@ return {
 				javascript = { "prettierd", "prettier" },
 				json = { "jq" },
 				lua = { "stylua" },
-				markdown = { "prettierd", "prettier" },
+				-- markdown = { "prettierd", "prettier" },
 				ocaml = { "ocamlformat " },
 				rust = { "rustfmt" },
 				typescript = { "prettierd", "prettier" },
