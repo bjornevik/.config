@@ -28,6 +28,10 @@ return {
 		statuscolumn = { enabled = true },
 		words = { enabled = false },
 		dashboard = { enabled = true },
+		indent = { enabled = true },
+		input = { enabled = true },
+		scope = { enabled = true },
+		picker = { enabled = true },
 	},
 	keys = {
 		{
