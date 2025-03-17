@@ -8,7 +8,7 @@ return {
 	},
 	{
 		"echasnovski/mini.surround",
-		enabled = true,
+		enabled = false,
 		opts = {
 			mappings = {
 				-- use "S", because s is used for leap.nvim
