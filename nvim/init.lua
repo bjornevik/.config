@@ -28,3 +28,22 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		vim.highlight.on_yank()
 	end,
 })
+
+vim.lsp.enable {
+	"ts_ls",
+	"tailwindcss",
+	"volar",
+	"eslint",
+	"lua_ls",
+	"gopls",
+	-- "marksman",
+	-- "ocamllsp",
+}
+
+-- Move this out whenever I make the jump fully
+require("config.lsp.settings").setup_lsp_attach()
+---@type vim.diagnostic.Opts
+vim.diagnostic.config {
+	virtual_text = false,
+	virtual_lines = { current_line = true },
+}
