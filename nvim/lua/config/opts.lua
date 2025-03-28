@@ -62,11 +62,11 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 -- Show diagnostic on cursor hover.
-vim.api.nvim_create_autocmd("CursorHold", {
-	group = "custom_opts",
-	pattern = "*",
-	callback = function()
-		vim.diagnostic.open_float { scope = "cursor", focusable = false, border = "rounded" }
-	end,
-	desc = "Show diagnostic on cursor hover.",
-})
+-- vim.api.nvim_create_autocmd("CursorHold", {
+-- 	group = "custom_opts",
+-- 	pattern = "*",
+-- 	callback = function()
+-- 		vim.diagnostic.open_float { scope = "cursor", focusable = false, border = "rounded" }
+-- 	end,
+-- 	desc = "Show diagnostic on cursor hover.",
+-- })

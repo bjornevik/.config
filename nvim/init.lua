@@ -44,6 +44,6 @@ vim.lsp.enable {
 require("config.lsp.settings").setup_lsp_attach()
 ---@type vim.diagnostic.Opts
 vim.diagnostic.config {
-	virtual_text = false,
+	virtual_text = true,
 	virtual_lines = { current_line = true },
 }
