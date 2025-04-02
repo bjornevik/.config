@@ -22,4 +22,4 @@ hs.hotkey.bind(hyper, "p", open_app("Podcasts")) -- apple (p)odcas
 hs.hotkey.bind(hyper, "q", open_app("Simulator")) -- q cause unused
 hs.hotkey.bind(hyper, "s", open_app("Slack")) -- (s)lack
 hs.hotkey.bind(hyper, "t", open_app("ghostty")) -- (t)erminal
-hs.hotkey.bind(hyper, "w", open_app("Firefox")) -- (w)eb
+hs.hotkey.bind(hyper, "w", open_app("Google Chrome")) -- (w)eb browser
