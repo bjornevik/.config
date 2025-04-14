@@ -1,3 +1,11 @@
+local function get_workspace_folder()
+	local root = vim.fn.getcwd()
+	return {
+		name = vim.fn.fnamemodify(root, ":t"),
+		uri = vim.uri_from_fname(root),
+	}
+end
+
 ---@type vim.lsp.Config
 return {
 	cmd = { "vscode-eslint-language-server", "--stdio" },
@@ -12,6 +20,7 @@ return {
 		"svelte",
 		"astro",
 	},
+	root_markers = { ".eslintrc.js", "package.json", "tsconfig.json", ".git" },
 	settings = {
 		codeAction = {
 			disableRuleComment = {
@@ -43,5 +52,6 @@ return {
 		workingDirectory = {
 			mode = "location",
 		},
+		workspaceFolder = get_workspace_folder(),
 	},
 }
