@@ -102,25 +102,25 @@ M.setup_lsp_attach = function()
 
 			---@diagnostic disable: missing-fields
 
-			if client.supports_method(client, "textDocument/hover") then
+			if client:supports_method "textDocument/hover" then
 				vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = 0 })
 			end
 
-			if client.supports_method(client, "textDocument/definition") then
+			if client:supports_method "textDocument/definition" then
 				vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = 0, desc = "LSP: Go to definition" })
 			end
 
-			if client.supports_method(client, "textDocument/inlayHint") then
+			if client:supports_method "textDocument/inlayHint" then
 				vim.keymap.set("n", "<leader>uh", function()
 					vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 				end, { noremap = true, desc = "LSP inlay hints", buffer = 0 })
 			end
 
-			if client.supports_method(client, "textDocument/rename") then
+			if client:supports_method "textDocument/rename" then
 				vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { buffer = 0, desc = "LSP: rename" })
 			end
 
-			if client.supports_method(client, "textDocument/codeAction") then
+			if client:supports_method "textDocument/codeAction" then
 				vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action, { buffer = 0, desc = "LSP: code action" })
 			end
 		end,
