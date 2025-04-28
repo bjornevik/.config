@@ -123,6 +123,13 @@ M.setup_lsp_attach = function()
 			if client:supports_method "textDocument/codeAction" then
 				vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action, { buffer = 0, desc = "LSP: code action" })
 			end
+
+			if client:supports_method "textDocument/documentColor" then
+				vim.lsp.document_color.enable(true, args.buf)
+				vim.keymap.set("n", "<leader>uc", function()
+					vim.lsp.document_color.enable(not vim.lsp.document_color.is_enabled())
+				end, { noremap = true, desc = "LSP document color", buffer = 0 })
+			end
 		end,
 	})
 end
