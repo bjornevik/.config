@@ -87,10 +87,10 @@ return {
 				{ "<leader>ff", builtin.find_files, noremap = true, desc = "(f)ind (f)iles" },
 				{ "<leader>tb", builtin.buffers, noremap = true, desc = "(t)elescope (b)uffers" },
 				{ "<leader>o", builtin.buffers, noremap = true, desc = "(o)pen buffers" },
-				{ "<leader>fs", builtin.live_grep, noremap = true, desc = "(f)ind (s)tring" },
+				{ "<leader>fs", mg.multi_grep, noremap = true, desc = "(f)ind multi(g)rep" },
+				-- { "<leader>fs", builtin.live_grep, noremap = true, desc = "(f)ind (s)tring" },
 				{ "<leader>bf", builtin.current_buffer_fuzzy_find, noremap = true, desc = "(b)uffer (f)fuzzy find" },
 				{ "<leader>fh", builtin.help_tags, noremap = true, desc = "(f)ind (h)elp" },
-				{ "<leader>fg", mg.multi_grep, noremap = true, desc = "(f)ind multi(g)rep" },
 			}
 		end,
 		init = function()
