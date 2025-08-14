@@ -30,6 +30,7 @@ return {
 					"gosum",
 					"gomod",
 				},
+				ignore_install = { "org" },
 				auto_install = false,
 				highlight = {
 					enable = true,
