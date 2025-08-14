@@ -37,7 +37,7 @@ vim.lsp.enable {
 	"lua_ls",
 	"gopls",
 	-- "marksman",
-	-- "ocamllsp",
+	"ocamllsp",
 }
 
 -- Move this out whenever I make the jump fully
