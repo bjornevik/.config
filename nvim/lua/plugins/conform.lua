@@ -18,11 +18,17 @@ return {
 				json = { "jq" },
 				lua = { "stylua" },
 				-- markdown = { "prettierd", "prettier" },
-				ocaml = { "ocamlformat " },
+				ocaml = { "ocp-indent", "ocamlformat" },
 				rust = { "rustfmt" },
 				typescript = { "prettierd", "prettier" },
 				typescriptreact = { "prettierd", "prettier" },
 				vue = { "prettierd", "prettier" },
+			},
+			formatters = {
+				ocamlformat = {
+					-- append_args = "--enable-outside-detected-project -",
+					args = { "--enable-outside-detected-project", "-" },
+				},
 			},
 		},
 		keys = function()
