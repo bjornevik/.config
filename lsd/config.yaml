@@ -1,0 +1,10 @@
+blocks:
+  - permission
+  - user
+# - group # not really relevant for me
+  - size
+  - date
+  - name
+
+color:
+  theme: custom
