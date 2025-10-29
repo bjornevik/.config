@@ -30,13 +30,12 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 vim.lsp.enable {
-	"ts_ls",
+	"vtsls",
+	"vue_ls",
 	"tailwindcss",
-	"volar",
 	"eslint",
 	"lua_ls",
 	"gopls",
-	-- "marksman",
 	"ocamllsp",
 }
 
