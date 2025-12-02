@@ -10,6 +10,7 @@ return {
 		"postcss.config.cjs",
 		"postcss.config.mjs",
 		"postcss.config.ts",
+		".git",
 	},
 	-- don't really use all of these, but they're the ones I think I _might_ need at some point
 	filetypes = {
