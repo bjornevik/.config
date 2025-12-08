@@ -22,7 +22,7 @@ return {
 				rust = { "rustfmt" },
 				typescript = { "prettierd", "prettier" },
 				typescriptreact = { "prettierd", "prettier" },
-				vue = { "prettierd", "prettier" },
+				vue = { "prettier", "prettierd" },
 			},
 			formatters = {
 				ocamlformat = {
