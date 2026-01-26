@@ -1,6 +1,7 @@
 return {
 	{
-		"ggandor/leap.nvim",
+		-- https://github.com/ggandor/leap.nvim/commit/0033bcaefc3cd7cf5a70b28cd356fe4860e5c074
+		"https://codeberg.org/andyg/leap.nvim",
 		enabled = true,
 		dependencies = {
 			"tpope/vim-repeat",
