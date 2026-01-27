@@ -20,8 +20,8 @@ return {
 		keys = function()
 			local ufo = require "ufo"
 			return {
-				{ "n", "zR", ufo.openAllFolds, desc = "open all folds" },
-				{ "n", "zM", ufo.closeAllFolds, desc = "close all folds" },
+				{ "zR", ufo.openAllFolds, mode = { "n" }, desc = "open all folds" },
+				{ "zM", ufo.closeAllFolds, mode = { "n" }, desc = "close all folds" },
 			}
 		end,
 	},
