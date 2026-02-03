@@ -72,7 +72,7 @@ return {
 					end
 					local trouble = require "trouble"
 
-					if client.supports_method(client, "textDocument/references") then
+					if client:supports_method "textDocument/references" then
 						vim.keymap.set("n", "gr", function()
 							trouble.toggle "lsp_references"
 						end, { buffer = 0, desc = "LSP References" })
