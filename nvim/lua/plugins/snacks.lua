@@ -29,8 +29,7 @@ return {
 		words = { enabled = false },
 		dashboard = { enabled = true },
 		indent = { enabled = true },
-		-- disabled cause it won't let me delete the first letter on a rename
-		input = { enabled = false },
+		input = { enabled = true },
 		scope = { enabled = true },
 		picker = { enabled = true },
 	},
