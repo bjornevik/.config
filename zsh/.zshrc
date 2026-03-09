@@ -37,6 +37,8 @@ source ~/.secretrc
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+export PATH="$PATH:/Applications/Obsidian.app/Contents/MacOS"
+
 export EDITOR="nvim"
 export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/.rgrc"
 export MANPAGER='nvim +Man!'
