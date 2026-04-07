@@ -14,6 +14,7 @@ vim.g.have_nerd_font = true
 
 require "config.opts"
 require "config.maps"
+require "config.undotree"
 
 require "config.lazy"
 
