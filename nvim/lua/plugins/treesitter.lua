@@ -29,6 +29,7 @@ return {
 					"vimdoc",
 					"gosum",
 					"gomod",
+					"markdown",
 				},
 				ignore_install = { "org" },
 				auto_install = false,
