@@ -32,6 +32,15 @@ M.setup_lsp_attach = function()
 				end, { noremap = true, desc = "LSP inlay hints", buffer = 0 })
 			end
 
+			if client:supports_method "textDocument/codeLens" then
+				vim.keymap.set("n", "<leader>uc", function()
+					vim.lsp.codelens.enable(not vim.lsp.codelens.is_enabled())
+				end, { noremap = true, desc = "Toggle codelens", buffer = 0 })
+				vim.keymap.set("n", "<leader>rc", function()
+					vim.lsp.codelens.run()
+				end, { noremap = true, desc = "Run Codelens", buffer = 0 })
+			end
+
 			if client:supports_method "textDocument/rename" then
 				vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { buffer = 0, desc = "LSP: rename" })
 			end
