@@ -23,7 +23,6 @@ return {
 						opts = {
 							labels = "", -- force autojump
 							safe_labels = vim.fn.mode(1):match "o" and "" or nil,
-							case_sensitive = true,
 						},
 					}
 					return vim.tbl_deep_extend("keep", common_args, key_specific_args)
